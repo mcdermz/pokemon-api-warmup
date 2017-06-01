@@ -13,6 +13,7 @@
       vm.$onInit = function (){}
 
       vm.generatePokemon = function (){
+        vm.isLoading = true
         const pokeId = Math.ceil(Math.random() * 722)
         console.log('generating...');
         $http.get(`http://pokeapi.co/api/v2/pokemon/${pokeId}`)
@@ -21,6 +22,7 @@
             name: response.data.name,
             front_image: response.data.sprites.front_shiny,
           }
+          vm.isLoading = false
         })
       }
     }
