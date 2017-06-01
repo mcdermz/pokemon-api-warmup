@@ -2,14 +2,14 @@
   <div class="row text-center">
     <h1>Generate a random Pokemon</h1>
   </div>
-  <div class="row text-center" ng-click="$ctrl.generatePokemon()">
-    <h1>Generate</h1>
+  <div class="row text-center center-block" ng-click="$ctrl.generatePokemon()">
+    <button type="button" class="btn btn-primary btn-lg btn-block">Generate</button>
   </div>
-  <div ng-show="$ctrl.isLoading" class="searching">
-    <img src="https://s-media-cache-ak0.pinimg.com/originals/dd/67/4f/dd674f89d713bb2645a3292510219998.gif" alt="">
-  </div>
-  <div ng-if="!$ctrl.isLoading" class="row">
-    <h2>{{$ctrl.pokemon.name}}</h2>
-    <img ng-src="{{$ctrl.pokemon.front_image}}" alt="">
+  <div class="row text-center">
+    <img ng-show="$ctrl.isLoading"  src="https://s-media-cache-ak0.pinimg.com/originals/dd/67/4f/dd674f89d713bb2645a3292510219998.gif" alt="">
+    <div ng-if="!$ctrl.isLoading" class="col-md-12 text-center">
+      <h2>{{$ctrl.pokemon.name}}</h2>
+      <img ng-src="{{$ctrl.pokemon.front_image}}" alt="">
+    </div>
   </div>
 </div>
